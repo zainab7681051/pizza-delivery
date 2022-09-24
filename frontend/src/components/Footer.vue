@@ -1,79 +1,46 @@
 <template>
-  <footer class="ftco-footer ftco-section img">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">About Us</h2>
-            <p>pizza delivery people, we deliver pizza.</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Recent Blog</h2>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
-          <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">Services</h2>
-            <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">Cooked</a></li>
-              <li><a href="#" class="py-2 d-block">Deliver</a></li>
-              <li><a href="#" class="py-2 d-block">Quality Foods</a></li>
-              <li><a href="#" class="py-2 d-block">Mixed</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
-            <div class="block-23 mb-3">
-              <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">erbil, Kurdistan region, Iraq</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@deafultEmail.com</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;{{date}} All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        </div>
+    
+  <footer class="footer section bd-container">
+  <div class="footer__container bd-grid">
+    <div class="footer__content">
+      <a href="#" class="footer__logo">Tasty Food</a>
+      <span class="footer__description">Restaurant</span>
+      <div>
+        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
       </div>
     </div>
-  </footer>
+    <div class="footer__content">
+      <h3 class="footer__title">Services</h3>
+      <ul>
+        <li><a href="#" class="footer__link">Delivery</a></li>
+        <li><a href="#" class="footer__link">Pricing</a></li>
+        <li><a href="#" class="footer__link">Fast food</a></li>
+        <li><a href="#" class="footer__link">Reserve your spot</a></li>
+      </ul>
+    </div>
+    <div class="footer__content">
+      <h3 class="footer__title">Information</h3>
+      <ul>
+        <li><a href="#" class="footer__link">Event</a></li>
+        <li><a href="#" class="footer__link">Contact us</a></li>
+        <li><a href="#" class="footer__link">Privacy policy</a></li>
+        <li><a href="#" class="footer__link">Terms of services</a></li>
+      </ul>
+    </div>
+    <div class="footer__content">
+      <h3 class="footer__title">Adress</h3>
+      <ul>
+        <li>Lima - Peru</li>
+        <li>Jr Union #999</li>
+        <li>999 - 888 - 777</li>
+        <li>tastyfood@email.com</li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
+</footer>
 </template>
 
 <script>
