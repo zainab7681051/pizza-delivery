@@ -39,13 +39,13 @@
       </ul>
     </div>
   </div>
-  <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
+  <p class="footer__copy">&#169; {{date}}. All right reserved</p>
 </footer>
 </template>
 
 <script>
 export default {
-  name: 'footer',
+  name: 'foot',
   data:()=>({
     date:new Date().getFullYear(),
   })

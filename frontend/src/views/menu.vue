@@ -1,11 +1,10 @@
 <template>
 
-
 		<main class="l-main">
-			<home-section/>
+			<main-menu-section/>
+			<menu-section/>
 			<about-section/>
 			<services-section/>
-			<menu-section/>
 			<contact-section/>
 		</main>
 
@@ -13,7 +12,7 @@
 </template>
 
 <script>
-import HomeSection from '../components/Home.vue'
+import MainMenuSection from '../components/MainMenu.vue'
 import AboutSection from '../components/About.vue'
 import ServicesSection from '../components/Services.vue'
 import MenuSection from '../components/MenuOfTheWeek.vue'
@@ -26,7 +25,7 @@ export default{
 	methods:{
 	},
 	components:{
-		HomeSection,
+		MainMenuSection,
 		AboutSection,
 		ServicesSection,
 		MenuSection,

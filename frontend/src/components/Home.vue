@@ -5,7 +5,7 @@
           <div class="home__data">
               <h1 class="home__title">Tasty food</h1>
               <h2 class="home__subtitle">Try the best food of <br> the week.</h2>
-              <a href="#" class="button">View Menu</a>
+              <a href="/menu" class="button">View Menu</a>
           </div>
 
           <img src="../../public/assets/img/home.png" alt="" class="home__img">
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  
 export default {
   name: 'home',
   data:()=>({

@@ -1,6 +1,6 @@
 import {
 	createRouter,
-	createWebHashHistory
+	createWebHistory
 } from 'vue-router'
 
 const routes = [
@@ -8,16 +8,21 @@ const routes = [
 		path: '/',
 		name: 'index',
 		component: ( ) => import( '../views/index.vue' )
-  },
+	},
 	{
-		path: '/404',
+		path: '/menu',
+		name: 'mainmenu',
+		component: ( ) => import( '../views/menu.vue' )
+	},
+	{
+		path: '/:pathMatch(.*)*',
 		name: '404',
 		component: ( ) => import( '../views/404.vue' )
-  },
+	}
 ]
 
 const router = createRouter( {
-	history: createWebHashHistory( ),
+	history: createWebHistory( ),
 	routes
 } )
 

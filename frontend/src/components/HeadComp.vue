@@ -28,8 +28,9 @@
 </template>
 
 <script>
+
 export default {
-  name: 'header',
+  name: 'headComp',
   methods:{
   }
 }
