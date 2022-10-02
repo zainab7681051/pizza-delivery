@@ -10,9 +10,10 @@
     "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
-    "install": "^0.13.0",
+    "firebase": "^9.10.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vuefire": "^2.2.5",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

@@ -32,9 +32,9 @@
     <div class="footer__content">
       <h3 class="footer__title">Adress</h3>
       <ul>
-        <li>Lima - Peru</li>
+        <li>Erbil - Kurdistan, Iraq</li><!-- 
         <li>Jr Union #999</li>
-        <li>999 - 888 - 777</li>
+        <li>999 - 888 - 777</li> -->
         <li>tastyfood@email.com</li>
       </ul>
     </div>
