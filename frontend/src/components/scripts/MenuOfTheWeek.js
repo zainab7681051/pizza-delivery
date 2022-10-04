@@ -11,41 +11,42 @@ import {
 	limit,
 	query,
 } from "firebase/firestore";
-import LoadingComp from './../LoadingComp.vue'
+
+import LoadingComp from "./../LoadingComp.vue"
 export default {
-	name: 'mainmenu',
+	name: 'menuOfTheWeek',
 	data: () => ({
 		menu: [],
-		loading: true,
+		loading: false,
 	}),
+
 	async mounted() {
 		try {
 			this.loading = true;
-			await this.getAll();
+			await this.getAll()
 		} catch (e) {
-			console.log(e);
+			console.log(e)
 			this.loading = false;
 		} finally {
 			this.loading = false;
 		}
 
 	},
-
 	methods: {
 		async getAll() {
 			try {
-				//TODO-->pagination
-				const menuRef = collection(db, "menu") //refrence the collection
-				const q = await getDocs(menuRef) //get all docs in collection
-				q.forEach((doc) => {
-					this.menu = [...this.menu, doc.data(), ] //push to menu array
+				const menuRef = collection(db, "menu")
+				const q = query(menuRef, orderBy("name", "desc"), limit(3));
+				const qq = await getDocs(q)
+				qq.forEach((doc) => {
+					this.menu = [...this.menu, doc.data(), ]
 				});
 			} catch (e) {
+				// statements
 				console.log(e);
 			}
 		}
 	},
-
 	components: {
 		LoadingComp,
 	}

@@ -1,42 +1,28 @@
 <template>
   <!--========== MENU ==========-->
   <section class="menu section bd-container" id="menu">
-    <span class="section-subtitle">Special</span>
-    <h2 class="section-title">Menu of the week</h2>
 
-    <div class="menu__container bd-grid">
-        <div class="menu__content">
-            <img src="../../public/assets/img/plate1.jpg" alt="" class="menu__img">
-            <h3 class="menu__name">Pizza 1</h3>
-            <span class="menu__detail">Delicious</span>
-            <span class="menu__preci">$22.00</span>
-            <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-        </div>
-
-        <div class="menu__content">
-            <img src="../../public/assets/img/plate2.jpg" alt="" class="menu__img">
-            <h3 class="menu__name">Pizza 2</h3>
-            <span class="menu__detail">Delicious</span>
-            <span class="menu__preci">$12.00</span>
-            <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-        </div>
-        
-        <div class="menu__content">
-            <img src="../../public/assets/img/plate3.jpg" alt="" class="menu__img">
-            <h3 class="menu__name">Pizza 3</h3>
-            <span class="menu__detail">Delicious</span>
-            <span class="menu__preci">$9.50</span>
-            <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+    <loading-comp v-if="loading==true" class="bd-grid section-subtitle"/>
+    
+    <div v-if="loading==false">
+        <span class="section-subtitle">Special</span>
+        <h2 class="section-title">Menu of the week</h2>
+        <div class="menu__container bd-grid">
+            <div class="menu__content"
+            v-for="pizza in menu"
+            :key="pizza.name">
+                <img :src="pizza.imageAdress" alt="" class="menu__img">
+                <h3 class="menu__name">{{pizza.name}}</h3>
+                <!-- <span class="menu__detail">Delicious</span> -->
+                <span class="menu__preci">${{pizza.price}}</span>
+                <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+            </div>
         </div>
     </div>
   </section>
 </template>
-<script>
-export default {
-  name: 'menuOfTheWeek',
-  data:()=>({
-  })
-}
+
+<script src="./scripts/MenuOfTheWeek.js">
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

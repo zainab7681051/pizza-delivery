@@ -1,20 +1,19 @@
 import {
 	initializeApp
-} from 'firebase/app';
+} from "firebase/app";
 
 import {
 	getFirestore
 } from "firebase/firestore";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyCpDDYKQIkpnPfhNNRlbZBUyUp-bDsp9hs",
-	authDomain: "app01-60151.firebaseapp.com",
-	projectId: "app01-60151",
-	storageBucket: "app01-60151.appspot.com",
-	messagingSenderId: "653525364224",
-	appId: "1:653525364224:web:e87fd96e706f00c41eb2e5",
-	measurementId: "G-TTBB61FZTK"
+	apiKey: "AIzaSyCd_YXr6NTTmDdtHaNWafI21FA-qEimOCY",
+	authDomain: "pizza-delivery-5201d.firebaseapp.com",
+	projectId: "pizza-delivery-5201d",
+	storageBucket: "pizza-delivery-5201d.appspot.com",
+	messagingSenderId: "71075292279",
+	appId: "1:71075292279:web:f07fde8e43671e50b71272"
 }
-const app = initializeApp( firebaseConfig );
 
-export const db = getFirestore( app );
+const fireApp = initializeApp( firebaseConfig );
+export const db = getFirestore( fireApp );

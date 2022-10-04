@@ -6,7 +6,7 @@
         <!--========== HEADER ==========-->
         <header class="l-header" id="header">
             <nav class="nav bd-container">
-                <a href="#" class="nav__logo">Tasty</a>
+                <a href="/" class="nav__logo">Tasty</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">

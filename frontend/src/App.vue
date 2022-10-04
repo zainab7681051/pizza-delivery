@@ -1,9 +1,8 @@
 <template>
     <head-comp/>
-
 	  <router-view/>
-
     <foot-comp/>
+  
 </template>
 
 <script>
@@ -13,7 +12,7 @@ export default {
   name: 'App',
   components: {
   	HeadComp,
-  	FootComp
+  	FootComp,
   }
 }
 </script>
