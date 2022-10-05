@@ -3,10 +3,16 @@
             <i class='bx bx-chevron-up scrolltop__icon'></i>
         </a>
 
+  <a @click="this.$router.push('/menu')" class="shoppingCart">
+            <i class='bx bx-cart-alt shoppingCart__icon'></i>
+        </a>
+
         <!--========== HEADER ==========-->
         <header class="l-header" id="header">
             <nav class="nav bd-container">
-                <a href="/" class="nav__logo">Tasty</a>
+                <a @click="this.$router.push('/')"
+                 class="nav__logo"
+                 style="cursor: pointer;">Tasty</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
