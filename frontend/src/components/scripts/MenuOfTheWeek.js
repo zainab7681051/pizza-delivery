@@ -1,5 +1,7 @@
 import {
-	db
+	db,
+	auth,
+	provider
 } from "../../firebase.js";
 
 import {
@@ -12,6 +14,16 @@ import {
 	query,
 } from "firebase/firestore";
 
+import {
+	signInWithRedirect,
+	getRedirectResult
+} from 'firebase/auth';
+
+
+import {
+	mapState
+} from 'vuex'
+
 import LoadingComp from "./../LoadingComp.vue"
 export default {
 	name: 'menuOfTheWeek',
@@ -23,15 +35,43 @@ export default {
 	async mounted() {
 		try {
 			this.loading = true;
-			await this.getAll()
+			await this.getAll();
+
+			if (!this.isUserLoggedIn) {
+				const result = await getRedirectResult(auth)
+				console.log(result.user)
+
+				this.$store.dispatch(
+					'setToken',
+					result
+					.user
+					.accessToken
+				)
+
+				this.$store.dispatch(
+					'setUser',
+					result
+					.user
+				)
+			}
+
 		} catch (e) {
-			console.log(e)
+			console.log(e);
 			this.loading = false;
 		} finally {
 			this.loading = false;
 		}
 
 	},
+
+	computed: {
+		...mapState([
+      'isUserLoggedIn',
+      'user',
+    ]),
+
+	},
+
 	methods: {
 		async getAll() {
 			try {
@@ -45,8 +85,34 @@ export default {
 				// statements
 				console.log(e);
 			}
-		}
+		},
+
+		async login() {
+			try {
+				await signInWithRedirect(auth, provider);
+			} catch (e) {
+				console.log(e);
+			}
+		},
+
+		async addToCart(pizza) {
+			try {
+				console.log(`${pizza.name} added to cart`)
+				const order = {
+					name: pizza.name,
+					imageAdress: pizza.imageAdress,
+					price: pizza.price
+				}
+				this.$store.dispatch('setCart', order)
+			} catch (e) {
+				// statements
+				console.log(e);
+			} finally {
+				// statements
+			}
+		},
 	},
+
 	components: {
 		LoadingComp,
 	}

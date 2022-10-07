@@ -52,8 +52,6 @@ export default {
 					result
 					.user
 				)
-			} else {
-				console.log('')
 			}
 
 		} catch (e) {

@@ -35,73 +35,7 @@
           </header>
 </template>
 
-<script>
-import {
-  db,
-  auth,
-  provider
-} from "./../firebase.js";
-
-import {
-  signInWithRedirect,
-  getRedirectResult
-} from 'firebase/auth';
-
-
-import {
-  mapState
-} from 'vuex'
-
-export default {
-  name: 'headComp',
-  data: () => ({
-  }),
-  
-  async mounted() {
-    try {
-      if (!this.isUserLoggedIn) {
-        const result = await getRedirectResult(auth)
-        console.log(result.user)
-
-        this.$store.dispatch(
-          'setToken',
-          result
-          .user
-          .accessToken
-        )
-
-        this.$store.dispatch(
-          'setUser',
-          result
-          .user
-        )
-      } else {
-        console.log(this.user, this.isUserLoggedIn)
-      }
-
-    } catch (e) {
-      console.log(e);
-    }
-
-  },
-
-  computed: {
-    ...mapState([
-      'isUserLoggedIn',
-      'user',
-    ]),
-
-  },
-  methods:{
-    async login() {
-      try {
-        await signInWithRedirect(auth, provider);
-      } catch (e) {
-        console.log(e);
-      }
-    },
-  }
-}
+<script src='./scripts/HeadScript.js'>
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
