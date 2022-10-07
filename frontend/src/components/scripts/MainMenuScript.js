@@ -1,5 +1,7 @@
 import {
-	db
+	db,
+	auth,
+	provider
 } from "../../firebase.js";
 
 import {
@@ -11,6 +13,17 @@ import {
 	limit,
 	query,
 } from "firebase/firestore";
+
+import {
+	signInWithRedirect,
+	getRedirectResult
+} from 'firebase/auth';
+
+
+import {
+	mapState
+} from 'vuex'
+
 import LoadingComp from './../LoadingComp.vue'
 export default {
 	name: 'mainmenu',
@@ -22,12 +35,41 @@ export default {
 		try {
 			this.loading = true;
 			await this.getAll();
+
+			if (!this.isUserLoggedIn) {
+				const result = await getRedirectResult(auth)
+				console.log(result.user)
+
+				this.$store.dispatch(
+					'setToken',
+					result
+					.user
+					.accessToken
+				)
+
+				this.$store.dispatch(
+					'setUser',
+					result
+					.user
+				)
+			} else {
+				console.log('')
+			}
+
 		} catch (e) {
 			console.log(e);
 			this.loading = false;
 		} finally {
 			this.loading = false;
 		}
+
+	},
+
+	computed: {
+		...mapState([
+      'isUserLoggedIn',
+      'user',
+    ]),
 
 	},
 
@@ -42,6 +84,25 @@ export default {
 				});
 			} catch (e) {
 				console.log(e);
+			}
+		},
+
+		async login() {
+			try {
+				await signInWithRedirect(auth, provider);
+			} catch (e) {
+				console.log(e);
+			}
+		},
+
+		async addToCart(pizza) {
+			try {
+				console.log(`${pizza.name} added to cart`)
+			} catch (e) {
+				// statements
+				console.log(e);
+			} finally {
+				// statements
 			}
 		}
 	},

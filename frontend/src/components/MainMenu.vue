@@ -15,7 +15,11 @@
                 <h3 class="menu__name">{{pizza.name}}</h3>
                 <!-- <span class="menu__detail">Delicious</span> -->
                 <span class="menu__preci">${{pizza.price}}</span>
-                <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                <a 
+                @click="!isUserLoggedIn ? login():addToCart(pizza)" 
+                class="button menu__button">
+                    <i class='bx bx-cart-alt'></i>
+                </a>
             </div>
         </div>
     </div>
