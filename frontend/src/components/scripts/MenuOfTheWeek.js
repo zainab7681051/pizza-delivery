@@ -97,7 +97,7 @@ export default {
 
 		async addToCart(pizza) {
 			try {
-				console.log(`${pizza.name} added to cart`)
+				console.log(`${pizza}`)
 				const order = {
 					name: pizza.name,
 					imageAdress: pizza.imageAdress,

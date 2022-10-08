@@ -1,15 +1,14 @@
 <template>
 
 		<main class="l-main">
-			<div class="bd-container">
-				<h1> CART CART CART</h1>s
-			</div>
+			<cart-comp/>
 		</main>
 
     
 </template>
 
 <script>
+	import CartComp from '../components/CartComp.vue'
 export default{
 	name:"cart",
 	data:()=>({
@@ -18,6 +17,7 @@ export default{
 	methods:{
 	},
 	components:{
+		CartComp
 	}
 }
 

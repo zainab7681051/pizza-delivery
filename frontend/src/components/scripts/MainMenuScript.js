@@ -96,6 +96,12 @@ export default {
 		async addToCart(pizza) {
 			try {
 				console.log(`${pizza.name} added to cart`)
+				const order = {
+					name: pizza.name,
+					imageAdress: pizza.imageAdress,
+					price: pizza.price
+				}
+				this.$store.dispatch('setCart', order)
 			} catch (e) {
 				// statements
 				console.log(e);

@@ -26,8 +26,12 @@ export default createStore({
 		},
 		setCart(state, cart) {
 			try {
-				state.cart = [cart, ...state.cart]
-				console.log(state.cart)
+				if (cart !== 0) {
+					state.cart = [cart, ...state.cart]
+					console.log(state.cart)
+				} else {
+					state.cart = []
+				}
 			} catch (e) {
 				console.log('setters', e)
 			}
