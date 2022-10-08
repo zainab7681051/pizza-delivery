@@ -7,13 +7,13 @@ import createPersistedState from 'vuex-persistedstate'
 export default createStore({
 	strict: true,
 	plugins: [
-    createPersistedState()
-  ],
+	    createPersistedState()
+	  ],
 	state: {
 		token: null,
 		user: null,
 		isUserLoggedIn: false,
-		shoppingCart: {}
+		cart: []
 	},
 	getters: {},
 	mutations: {
@@ -25,12 +25,12 @@ export default createStore({
 			state.user = user
 		},
 		setCart(state, cart) {
-			state.shoppingCart = {
-				...state.shoppingCart,
-				cart
+			try {
+				state.cart = [cart, ...state.cart]
+				console.log(state.cart)
+			} catch (e) {
+				console.log('setters', e)
 			}
-			console.log('cartcartcart', state.shoppingCart)
-
 		}
 
 	},
