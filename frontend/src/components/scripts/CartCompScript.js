@@ -30,7 +30,9 @@ export default {
 	data: () => ({
 		menu: {},
 		loading: true,
-		counts: {}
+		counts: {},
+		sumOfAll: 0,
+		sumOfPrice: 0
 	}),
 	async mounted() {
 		try {
@@ -53,6 +55,21 @@ export default {
       'cart'
     ]),
 
+		sumOfAllOrder() {
+			this.sumOfAll = 0
+			for (var i in this.counts) {
+				this.sumOfAll += this.counts[i]
+			}
+			return this.sumOfAll;
+		},
+
+		price() {
+			this.sumOfPrice = 0;
+			for (var i in this.menu) {
+				this.sumOfPrice += (this.menu[i].price * this.counts[i])
+			}
+			return this.sumOfPrice;
+		}
 	},
 
 	methods: {
@@ -64,32 +81,32 @@ export default {
 
 					this.counts[x.name] = (this.counts[x.name] || 0) + 1;
 				});
-				/*
-								for (var i = 0; i < names.length; i++) {
-									for (var j = 0, c = 0; j < this.menu.length; j++) {
-										if (this.menu[j].name === names[i] && c === 0) {
-											
-											c++;
-
-											console.log(`${this.menu[j].name}==>${names[i]}`)
-										} else if (this.menu[j].name === names[i] && c !== 0) {
-											this.menu.splice(j, 1)
-											console.log(`${this.menu[j].name} was deleted==>${names[i]}`)
-										}
-										else {
-											console.log('ELSE', `${this.menu[j].name}==>${names[i]}`)
-										}
-									}
-								}*/
-				console.log('menu', this.menu)
 
 			} catch (e) {
 				console.log(e);
 			}
 		},
 
-		async decrease(pizza) {},
-		async increase(pizza) {},
+		async decrease(pizza) {
+			try {
+				this.counts[pizza.name] = this.counts[pizza.name] - 1
+				if (this.counts[pizza.name] <= 0) {
+					delete this.counts[pizza.name]
+					delete this.menu[pizza.name]
+				}
+			} catch (e) {
+				// statements
+				console.log(e);
+			}
+		},
+		async increase(pizza) {
+			try {
+				this.counts[pizza.name] = this.counts[pizza.name] + 1;
+			} catch (e) {
+				// statements
+				console.log(e);
+			}
+		},
 		async order() {},
 		async emptyCard() {
 			try {

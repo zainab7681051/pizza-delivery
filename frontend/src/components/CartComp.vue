@@ -31,7 +31,14 @@
                 </a>
             </div>
         </div>
-        <div style="position: relative; margin-top: 40px" class="bd-grid bd-container">
+        <div v-if="Object.keys(menu).length>0"
+        style="position: relative; margin-top: 40px" 
+        class="bd-grid bd-container">
+            <div style="text-align: center;color: white">
+             <h3>{{sumOfAllOrder}} Pizza's</h3>
+             <br>
+             <h2>Sum: ${{price}}</h2> 
+            </div>
             <button
             @click="order()" 
             class="button"><h3>ORDER</h3>
@@ -40,6 +47,18 @@
             <button 
             @click="emptyCard()"
             class="button"><h3>EMPTY CART</h3>
+            </button>
+          </div>
+
+          <div v-if="!Object.keys(menu).length>0"
+        style="position: relative; margin-top: 40px;" 
+        class="bd-grid bd-container">
+            <div style="text-align: center;color: white;">
+             <h2>Cart Is Empty</h2> 
+            </div>
+            <button
+            @click="this.$router.push('/menu')" 
+            class="button"><h3>Go to Menu</h3>
             </button>
           </div>
     </div>
