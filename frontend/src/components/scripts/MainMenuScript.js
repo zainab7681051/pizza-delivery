@@ -38,7 +38,6 @@ export default {
 
 			if (!this.isUserLoggedIn) {
 				const result = await getRedirectResult(auth)
-				console.log(result.user)
 
 				this.$store.dispatch(
 					'setToken',

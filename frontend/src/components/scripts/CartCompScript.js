@@ -7,11 +7,7 @@ import {
 import {
 	collection,
 	doc,
-	getDocs,
-	where,
-	orderBy,
-	limit,
-	query,
+	addDoc
 } from "firebase/firestore";
 
 import {
@@ -32,7 +28,8 @@ export default {
 		loading: true,
 		counts: {},
 		sumOfAll: 0,
-		sumOfPrice: 0
+		sumOfPrice: 0,
+		message: ''
 	}),
 	async mounted() {
 		try {
@@ -50,6 +47,8 @@ export default {
 
 	computed: {
 		...mapState([
+		//instead of writing 'this.$store.state.state-name'
+		//just write this.state-name(example, this.user)
       'isUserLoggedIn',
       'user',
       'cart'
@@ -107,17 +106,65 @@ export default {
 				console.log(e);
 			}
 		},
-		async order() {},
 		async emptyCard() {
 			try {
-				// statements
 				await this.$store.dispatch('setCart', 0);
-				this.menu = []
+				this.menu = {};
+				this.counts = {};
 			} catch (e) {
 				// statements
 				console.log(e);
 			}
-		}
+		},
+
+		async order() {
+			try {
+				this.loading = true
+				const order = await addDoc(collection(db, 'orders'), {
+					customerName: this.user.displayName,
+					customerId: this.user.uid,
+					customerEmail: this.user.email,
+					pizza: {
+						pizzasOrderd: this.menu,
+						numberOfPizzas: this.counts
+					},
+					payment: `$${this.sumOfPrice}`
+				});
+				this.message = "Your order was recieved successfully."
+			} catch (e) {
+				this.message = "something went wrong, try again later..."
+				this.loading = false
+				console.log(e);
+			} finally {
+				await this.$store.dispatch('setCart', 0);
+				this.menu = {};
+				this.counts = {};
+				this.loading = false
+				// Get the modal
+				let modal = document.getElementById("myModal");
+
+				// Get the button that opens the modal
+				let btn = document.getElementById("myBtn");
+
+				// Get the <span> element that closes the modal
+				let span = document.getElementsByClassName("close")[0];
+
+				modal.style.display = "block";
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = () => {
+					modal.style.display = "none";
+					this.$router.push('/')
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = (event) => {
+					if (event.target == modal) {
+						modal.style.display = "none";
+						this.$router.push('/')
+					}
+				}
+			}
+		},
 	},
 
 	components: {

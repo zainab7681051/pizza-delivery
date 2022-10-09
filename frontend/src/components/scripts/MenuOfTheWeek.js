@@ -39,8 +39,6 @@ export default {
 
 			if (!this.isUserLoggedIn) {
 				const result = await getRedirectResult(auth)
-				console.log(result.user)
-
 				this.$store.dispatch(
 					'setToken',
 					result
@@ -97,7 +95,6 @@ export default {
 
 		async addToCart(pizza) {
 			try {
-				console.log(`${pizza}`)
 				const order = {
 					name: pizza.name,
 					imageAdress: pizza.imageAdress,
@@ -107,8 +104,6 @@ export default {
 			} catch (e) {
 				// statements
 				console.log(e);
-			} finally {
-				// statements
 			}
 		},
 	},

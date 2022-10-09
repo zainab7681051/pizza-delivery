@@ -14,7 +14,7 @@
             <nav class="nav bd-container">
                 <a @click="this.$router.push('/')"
                  class="nav__logo"
-                 style="cursor: pointer;">Tasty</a>
+                 style="cursor: pointer;">Tasty Pizza</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">

@@ -399,30 +399,74 @@ img{
   padding: .625rem .813rem;
   border-radius: .5rem 0 .5rem 0;
 }
-
-/*========== APP ==========*/
-.app__data{
-  text-align: center;
+/*==========CART PAGE=============*/
+.plus-button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding: .625rem .813rem;
+  border-radius: .5rem 0 .5rem 0;
+}
+.minus-button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding: .625rem .813rem;
+  border-radius: .5rem 0 .5rem 0;
+  margin-right: 100px;
 }
 
-.app__description{
-  margin-bottom: var(--mb-5);
+.number{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding: .625rem .813rem;
+  border-radius: .5rem 0 .5rem 0;
+  margin-right: 50px;
+  margin-top: 20px;
+  color:white;
+  font:15px bold 'Poppins', sans-serif;
+
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--text-color); /* Fallback color */
 }
 
-.app__stores{
-  margin-bottom: var(--mb-4);
+/* Modal Content */
+.modal-content {
+  background-color: var(--body-color);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
-.app__store{
-  width: 120px;
-  margin: 0 var(--mb-1);
+/* The Close Button */
+.close {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.app__img{
-  width: 230px;
-  justify-self: center;
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
 }
-
 /*========== CONTACT ==========*/
 .contact__container{
   text-align: center;

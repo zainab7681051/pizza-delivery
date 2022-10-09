@@ -3,8 +3,8 @@
   <section class="home" id="home">
       <div class="home__container bd-container bd-grid">
           <div class="home__data">
-              <h1 class="home__title">Tasty food</h1>
-              <h2 class="home__subtitle">Try the best food of <br> the week.</h2>
+              <h1 class="home__title">Tasty Pizza</h1>
+              <h2 class="home__subtitle">Try the best Pizza of <br> the week.</h2>
               <a @click="this.$router.push('/menu')" class="button" style="cursor: pointer;">View Menu</a>
           </div>
 
