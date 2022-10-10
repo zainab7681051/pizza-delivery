@@ -1,15 +1,21 @@
 # Pizza Delievry
-Vuejs Web app with firebase cloud firestore and authentication
+Vuejs 3 web application for pizzerias. The graphic designs on the frontend are in  HTML/CSS with vue framework, and Google's firebase cloud services were used. Cloud firestore and authentication tools were used for getting/putting data to/from the cloud and registering and logging in the users.
+## NOTE: Google sign-in provider was enabled for this project, though firebase offers many more providers, e.g., facebook, twitter, anonymous user(users who choose to create account), etc... 
 # 
-### WARNING: this project is due to be serverless with firestore's real-time database-It will not have a backend server. So, it is not finished, yet.
-#
 # Preview
 ![caption](screenshot/pizza-delivery-resturant.gif)
 # 
 # tools & frameworks
 the following `stack` of tools and frameworks were used in this project
+
+* backend & databse:
+   * firebase 
+   * cloud firestore 
+   * firebase authentication(google sign-in)
+
 * frontend:
    * vuejs 3
    * HTML/CSS/SCSS/Javascript 
    * vue-router for route navigation
-   * vuex, vuex-router-sync frameworks for state management
+   * vuex for state management
+
