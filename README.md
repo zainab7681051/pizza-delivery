@@ -18,4 +18,3 @@ the following `stack` of tools and frameworks were used in this project
    * HTML/CSS/SCSS/Javascript 
    * vue-router for route navigation
    * vuex for state management
-
