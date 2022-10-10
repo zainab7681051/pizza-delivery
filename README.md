@@ -18,3 +18,15 @@ the following `stack` of tools and frameworks were used in this project
    * HTML/CSS/SCSS/Javascript 
    * vue-router for route navigation
    * vuex for state management
+# how to run
+install the dependencies on the frontend
+```
+npm install --save
+```
+then, to run the vue app, type the below code
+```
+vue serve
+```
+and click or copy the pagelink in the vue CLI prompt/git window and head towards the browser to see the app.
+
+***Note: you can host and deploy your app with firebase, for free. The docs for that are found at https://firebase.google.com/docs/hosting/quickstart***
